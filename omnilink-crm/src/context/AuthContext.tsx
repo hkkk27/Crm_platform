@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser({
       name: 'Ankit Kumar',
       role: chosenRole,
-      email: username || 'ankit@omnilink.local'
+      email: username || 'ankit@omnilink.com'
     });
   };
 
