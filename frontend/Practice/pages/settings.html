@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | OmniLink CRM</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/settings.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main settings-main-page">
+      <section class="content settings-content">
+        <div class="settings-page">
+          <section class="profile-hero-card">
+            <div class="profile-avatar-xl" id="settingsAvatar">AD</div>
+            <div class="profile-hero-info">
+              <h1 id="settingsName">Admin User</h1>
+              <p id="settingsEmail">admin@omnilink.com</p>
+              <span class="role-chip" id="settingsRole">Admin</span>
+            </div>
+            <a href="dashboard.html" class="settings-btn dashboard-btn" data-page-key="dashboard">Dashboard</a>
+          </section>
+
+          <div class="settings-sections">
+            <section class="settings-card">
+              <h2>Profile</h2>
+              <div class="info-row"><span>Name</span><strong id="profileName">Admin User</strong></div>
+              <div class="info-row"><span>Email</span><strong id="profileEmail">admin@omnilink.com</strong></div>
+              <div class="info-row"><span>Role</span><strong id="profileRole">Admin</strong></div>
+              <div class="info-row"><span>Phone</span><strong id="profilePhone">Not Available</strong></div>
+              <div class="info-row"><span>Status</span><strong class="status-active">Active</strong></div>
+            </section>
+
+            <section class="settings-card">
+              <h2>Account</h2>
+              <div class="info-row"><span>Email</span><strong id="accountEmail">admin@omnilink.com</strong></div>
+              <div class="info-row"><span>Password</span><strong>••••••••</strong></div>
+              <div class="info-row"><span>Role</span><strong id="accountRole">Admin</strong></div>
+            </section>
+          </div>
+
+          <div class="settings-actions">
+            <button class="settings-btn logout-btn-clean" type="button" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/helpers.js"></script>
+  <script src="../js/settings.js"></script>
+  <script>
+  if (typeof guardPage === "function") {
+    guardPage("settings");
+  }
+
+  if (typeof loadNavigation === "function") {
+    loadNavigation("settings");
+  }
+
+  renderSettingsPage();
+</script>
+</body>
+</html>

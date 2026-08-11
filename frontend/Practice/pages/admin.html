@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniLink CRM | Admin</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="../popup.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main admin-main">
+      <section class="content admin-page">
+        <section class="admin-stat-grid" id="adminStatGrid"></section>
+        <section class="admin-layout-grid">
+          <article class="admin-card admin-full-card">
+            <div class="admin-card-header admin-users-header">
+              <div class="admin-users-title-row">
+                <h2>User Management</h2>
+                <span id="adminUsersCount"></span>
+              </div>
+              <div class="admin-filter-bar">
+                <input type="date" id="adminDateFilter" class="admin-date-input" />
+                <button class="secondary-btn admin-clear-date-btn" id="adminClearDateFilter" type="button">Clear</button>
+              </div>
+            </div>
+            <div class="admin-table-scroll">
+              <table class="admin-table admin-users-table">
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Last Activity</th>
+                  </tr>
+                </thead>
+                <tbody id="adminUsersTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="admin-card admin-full-card">
+            <div class="admin-card-header">
+              <h2>Agent Management</h2>
+              <span id="adminAgentsCount"></span>
+            </div>
+            <div class="admin-table-scroll">
+              <table class="admin-table admin-agents-table">
+                <thead>
+                  <tr>
+                    <th>Agent</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Assigned Tickets</th>
+                    <th>SLA</th>
+                  </tr>
+                </thead>
+                <tbody id="adminAgentsTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="admin-card admin-full-card">
+            <div class="admin-card-header">
+              <h2>Campaign Controls</h2>
+              <span id="adminCampaignsCount"></span>
+            </div>
+            <div class="admin-table-scroll">
+              <table class="admin-table admin-campaigns-table">
+                <thead>
+                  <tr>
+                    <th>Campaign</th>
+                    <th>Channel</th>
+                    <th>Status</th>
+                    <th>Audience</th>
+                    <th>Sent</th>
+                    <th>Failed</th>
+                    <th>Owner</th>
+                  </tr>
+                </thead>
+                <tbody id="adminCampaignsTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="admin-card admin-full-card">
+            <div class="admin-card-header">
+              <h2>Data Health</h2>
+              <button class="secondary-btn" id="downloadReportBtn" type="button">Download Report</button>
+            </div>
+            <div class="admin-table-scroll">
+              <table class="admin-table admin-health-table">
+                <thead>
+                  <tr>
+                    <th>Area</th>
+                    <th>Records</th>
+                    <th>Primary Issue</th>
+                    <th>Issue Count</th>
+                    <th>Quality Score</th>
+                  </tr>
+                </thead>
+                <tbody id="adminDataHealthTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="admin-card admin-full-card">
+            <div class="admin-card-header compact">
+              <h2>Password Reset Requests</h2>
+              <span id="adminPasswordResetCount"></span>
+            </div>
+            <div class="admin-reset-grid" id="adminPasswordResetList"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="../js/navigation.js"></script>
+  <script src="../popup.js"></script>
+  <script src="../js/api-cache.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

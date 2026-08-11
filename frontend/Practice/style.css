@@ -1,0 +1,702 @@
+/* ================================================================= */
+/* CORE ELEMENT GLOBAL NORMALIZATIONS */
+/* ================================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+    --teal: #009688;
+    --teal-dark: #00796f;
+    --navy: #192A56;
+    --navy-dark: #102043;
+    --orange: #F58220;
+    --green: #39B54A;
+    --red: #D94A4A;
+    --background: #f5f7fb;
+    --white: #FFFFFF;
+    --text-dark: #1f2937;
+    --text-medium: #4A5568;
+    --text-light: #64748b;
+    --border: #e5e7eb;
+    --soft-border: #E2E8F0;
+    --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+    --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.app-body {
+    background:
+        radial-gradient(circle at top left, rgba(0, 150, 136, 0.10), transparent 35%),
+        linear-gradient(135deg, #F7FAFC 0%, #EEF4FB 100%);
+    color: #333333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ================================================================= */
+/* LOGIN / AUTH / FORGOT PASSWORD PAGE */
+/* ================================================================= */
+
+.auth-page-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background-color: var(--white);
+    padding: 2.6rem 2.4rem;
+    border-radius: 18px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: var(--shadow-card);
+    animation: cardFadeIn 0.45s ease forwards;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2.1rem;
+}
+
+/* Logo: rounded rectangle only, no border box */
+.company-logo {
+    width: 190px;
+    height: 130px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 22px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.brand-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--teal);
+    letter-spacing: -0.025em;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.35rem;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.form-label {
+    font-size: 0.73rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.055em;
+    color: var(--text-medium);
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 0.86rem 0.95rem;
+    font-size: 0.93rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: #9AA8B8;
+}
+
+.form-input:hover,
+.form-select:hover,
+.form-input:focus,
+.form-select:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(0, 150, 136, 0.14);
+}
+
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    color: #FFFFFF;
+    padding: 0.9rem;
+    font-size: 0.93rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    box-shadow: 0 10px 18px rgba(0, 150, 136, 0.22);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    transform: translateY(-1px);
+    box-shadow: 0 14px 22px rgba(0, 150, 136, 0.28);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 14px rgba(0, 150, 136, 0.2);
+}
+
+/* ================================================================= */
+/* FORGOT PASSWORD PAGE */
+/* ================================================================= */
+
+.reset-screen {
+    animation: screenFadeIn 0.35s ease forwards;
+}
+
+@keyframes screenFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reset Password title changed from black to EMAIL label colour */
+.reset-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-medium);
+    margin-bottom: 0.85rem;
+    line-height: 1.2;
+}
+
+.reset-description {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #5F6F89;
+    margin-bottom: 1.7rem;
+}
+
+.reset-screen .form-group {
+    margin-bottom: 1rem;
+}
+
+.reset-screen .btn-primary {
+    margin-top: 0.15rem;
+}
+
+/* Keep success title green */
+.success-title {
+    color: #14804A;
+}
+
+/* Forgot password page icons */
+#registeredEmail,
+#otpCode,
+#newPassword,
+#confirmPassword {
+    background-repeat: no-repeat;
+    background-position: 0.9rem center;
+    background-size: 18px 18px;
+    padding-left: 2.75rem;
+}
+
+#registeredEmail {
+    background-image: url("email.png");
+}
+
+#otpCode {
+    background-image: url("role.png");
+}
+
+#newPassword,
+#confirmPassword {
+    background-image: url("lock.png");
+}
+
+/* Same teal hover/focus colour throughout forgot-password page */
+#registeredEmail:hover,
+#otpCode:hover,
+#newPassword:hover,
+#confirmPassword:hover,
+#registeredEmail:focus,
+#otpCode:focus,
+#newPassword:focus,
+#confirmPassword:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(0, 150, 136, 0.14);
+}
+
+/* Back link */
+.forgot-password-container {
+    text-align: center;
+    margin-top: 1.65rem;
+}
+
+.forgot-password-container a,
+.forgot-password-link,
+.back-login-link,
+.back-login-btn {
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.forgot-password-container a:hover,
+.forgot-password-link:hover,
+.back-login-link:hover,
+.back-login-btn:hover {
+    color: var(--teal-dark);
+    text-decoration: underline;
+}
+
+/* ================================================================= */
+/* APPLICATION GRID WORKSPACE STRUCTURAL MAPS */
+/* ================================================================= */
+
+.main-layout-shell {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar-container {
+    width: 260px;
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 8px 0 20px rgba(15, 23, 42, 0.15);
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-branding {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(16, 32, 67, 0.75);
+    text-align: center;
+}
+
+.sidebar-logo {
+    width: 145px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px;
+    border-radius: 18px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.sidebar-badge {
+    font-size: 0.72rem;
+    color: #B2DFDB;
+    margin-top: 0.35rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.sidebar-navigation {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.nav-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.78rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 9px;
+    color: #E2E8F0;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    transform: translateX(3px);
+}
+
+.nav-button.active-tab {
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 8px 16px rgba(0, 150, 136, 0.28);
+}
+
+.sidebar-bottom {
+    padding: 1rem;
+    background-color: rgba(16, 32, 67, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-logout {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #FEB2B2;
+    color: #FEB2B2;
+    padding: 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: rgba(245, 101, 101, 0.15);
+    color: #FFFFFF;
+}
+
+/* ================================================================= */
+/* DASHBOARD CONTENT AREA */
+/* ================================================================= */
+
+.workspace-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: calc(100% - 260px);
+}
+
+.header-bar {
+    height: 64px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.env-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #EDF2F7;
+    color: #4A5568;
+    padding: 0.3rem 0.55rem;
+    border-radius: 999px;
+}
+
+.env-status {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--teal);
+}
+
+.operator-email {
+    font-weight: 800;
+    color: #1A202C;
+}
+
+.view-viewport {
+    padding: 2rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    background: #F7FAFC;
+}
+
+.view-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.content-card {
+    background-color: #FFFFFF;
+    padding: 1.6rem;
+    border-radius: 14px;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    box-shadow: var(--shadow-soft);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1A202C;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-top: 0.35rem;
+    line-height: 1.5;
+}
+
+/* ================================================================= */
+/* POLICY ALERT BANNERS */
+/* ================================================================= */
+
+.role-banner {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 5px solid;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.policy-admin {
+    background-color: #E6FFFA;
+    border-color: var(--teal);
+    color: #234E52;
+}
+
+.policy-store {
+    background-color: #FFFAF0;
+    border-color: #DD6B20;
+    color: #9C4221;
+}
+
+.policy-crm {
+    background-color: #FAF5FF;
+    border-color: #805AD5;
+    color: #553C9A;
+}
+
+.policy-management {
+    background-color: #E6FFFA;
+    border-color: #319795;
+    color: #234E52;
+}
+
+.policy-service {
+    background-color: #F0FFF4;
+    border-color: #38A169;
+    color: #276749;
+}
+
+/* ================================================================= */
+/* CUSTOMER DATA BOX */
+/* ================================================================= */
+
+.data-file-box {
+    margin-top: 1.5rem;
+    border: 1px solid #EDF2F7;
+    border-radius: 12px;
+    background-color: #F7FAFC;
+    padding: 1rem;
+    max-width: 520px;
+}
+
+.data-file-title {
+    font-weight: 800;
+    color: #4A5568;
+    margin-bottom: 0.6rem;
+    font-size: 0.88rem;
+}
+
+.data-grid-code {
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: #4A5568;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* ================================================================= */
+/* TOAST MESSAGES */
+/* ================================================================= */
+
+.toast-stack-layer {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast-message-box {
+    pointer-events: auto;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    background-color: #1A202C;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #2D3748;
+    box-shadow: 0 14px 25px rgba(0, 0, 0, 0.18);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: all 0.3s ease;
+}
+
+.toast-tag {
+    color: var(--teal);
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.toast-text {
+    font-size: 0.78rem;
+    opacity: 0.95;
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ================================================================= */
+/* LOGIN PAGE ICONS */
+/* ================================================================= */
+
+#login-email,
+#login-password,
+#login-role {
+    background-repeat: no-repeat;
+    background-position: 0.9rem center;
+    background-size: 18px 18px;
+    padding-left: 2.75rem;
+}
+
+#login-email {
+    background-image: url("email.png");
+}
+
+#login-password {
+    background-image: url("lock.png");
+}
+
+#login-role {
+    background-image: url("role.png");
+    cursor: pointer;
+}
+
+/* ================================================================= */
+/* RESPONSIVE DESIGN */
+/* ================================================================= */
+
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 2rem 1.6rem;
+        max-width: 94%;
+    }
+
+    .company-logo {
+        width: 165px;
+        height: 115px;
+    }
+
+    .reset-title {
+        font-size: 1.45rem;
+    }
+
+    .main-layout-shell {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .sidebar-container {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .workspace-panel {
+        width: 100%;
+    }
+
+    .header-bar {
+        height: auto;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .view-viewport {
+        padding: 1rem;
+    }
+
+    .sidebar-navigation {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .nav-button {
+        min-width: 180px;
+    }
+}

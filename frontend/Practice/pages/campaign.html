@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Campaign Management</title>
+ <link rel="stylesheet" href="../css/common.css">
+ <link rel="stylesheet" href="../css/campaign.css">
+  <link rel="stylesheet" href="../popup.css">
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+<section class="content campaign-content">
+<div class="campaign-tabs">
+          <button class="tab-btn active" onclick="switchCampaignTab('dashboard', this)">Dashboard</button>
+          <button class="tab-btn" onclick="switchCampaignTab('create', this)">Create Campaign</button>
+          <button class="tab-btn" onclick="switchCampaignTab('templates', this)">Template Builder</button>
+          <button class="tab-btn" onclick="switchCampaignTab('send', this)">Send / Simulate</button>
+          <button class="tab-btn" onclick="switchCampaignTab('history', this)">History</button>
+          <button class="tab-btn" onclick="switchCampaignTab('responses', this)">Responses</button>
+          <button class="tab-btn" onclick="switchCampaignTab('metrics', this)">Daily Metrics</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="tab-dashboard" class="campaign-tab-panel active">
+          <div class="kpi-grid compact-kpi-grid">
+            <div class="kpi-card">
+              <span>Total Campaigns</span>
+              <strong id="kpiTotalCampaigns">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Sent Today</span>
+              <strong id="kpiSentToday">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Messages Today</span>
+              <strong id="kpiMessagesToday">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Eligible Today</span>
+              <strong id="kpiEligibleToday">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Removed</span>
+              <strong id="kpiRemovedToday">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Opened Today</span>
+              <strong id="kpiOpenCount">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Clicked Today</span>
+              <strong id="kpiClickCount">0</strong>
+            </div>
+
+            <div class="kpi-card">
+              <span>Converted Today</span>
+              <strong id="kpiConversionCount">0</strong>
+            </div>
+          </div>
+        </div>
+        <!-- Create Campaign -->
+        <div id="tab-create" class="campaign-tab-panel">
+          <div class="campaign-form-wrap">
+            <div class="card">
+              <h3>Create Campaign</h3>
+
+              <div class="field">
+                <label>Campaign Name</label>
+                <input id="campaignName" placeholder="Enter campaign name" />
+              </div>
+
+              <div class="field">
+                <label>Campaign Type</label>
+                <select id="campaignType">
+                  <option>Birthday Voucher Campaign</option>
+                  <option>Potential Member Campaign</option>
+                  <option>Silver-to-Gold Upgrade Campaign</option>
+                  <option>Inactive Customer Winback</option>
+                  <option>High Value Customer Exclusive Preview</option>
+                  <option>Cart Abandonment Reminder</option>
+                  <option>Wishlist Reminder</option>
+                  <option>App Re-engagement Campaign</option>
+                  <option>Discount Sensitive Customer Campaign</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Business Channel</label>
+                <select id="businessChannel">
+                  <option>Email</option>
+                  <option>SMS</option>
+                  <option>WhatsApp</option>
+                  <option>App Notification</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Delivery Platform</label>
+                <select id="deliveryPlatform">
+                  <option>Discord</option>
+                  <option>Slack</option>
+                  <option>Local Simulation Only</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Target Segment</label>
+                <select id="targetSegment">
+                  <option>Potential Member</option>
+                  <option>Silver-to-Gold Eligible</option>
+                  <option>Inactive Customer</option>
+                  <option>High Value Customer</option>
+                  <option>Discount Sensitive Customer</option>
+                  <option>Electronics Buyer</option>
+                  <option>Clothing Buyer</option>
+                  <option>Groceries Buyer</option>
+                  <option>General Customer</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Template</label>
+                <select id="createTemplateSelect"></select>
+              </div>
+
+              <div class="field">
+                <label>Campaign Objective</label>
+                <input id="campaignObjective" placeholder="Enter objective" />
+              </div>
+
+              <div class="field">
+                <label>Created By</label>
+                <input id="createdBy" placeholder="Enter creator name" />
+              </div>
+
+              <div class="button-row">
+                <button class="primary-btn" onclick="createCampaignFromForm()">Create Campaign</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template Builder -->
+        <div id="tab-templates" class="campaign-tab-panel">
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Template Builder</h3>
+
+              <div class="field">
+                <label>Upload Template JSON</label>
+                <input type="file" id="templateJsonUpload" accept=".json" onchange="handleTemplateUpload(event)" />
+              </div>
+
+              <div class="field">
+                <label>Select Template</label>
+                <select id="templateSelect" onchange="loadSelectedTemplate()"></select>
+              </div>
+
+              <div class="field">
+                <label>Template JSON Editor</label>
+                <textarea
+                  id="templateJsonEditor"
+                  rows="14"
+                  placeholder='{"template_name":"","title":"","body":"","cta_text":"","footer":"CRM"}'
+                ></textarea>
+              </div>
+
+              <div class="button-row">
+                <button class="secondary-btn" onclick="resetTemplateEditor()">Reload Selected</button>
+                <button class="primary-btn" onclick="saveTemplate()">Save Template</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Supported Placeholders</h3>
+
+              <div class="placeholder-list">
+                <code>{{customer_id}}</code>
+                <code>{{customer_name}}</code>
+                <code>{{membership_tier}}</code>
+                <code>{{points_balance}}</code>
+                <code>{{preferred_category}}</code>
+                <code>{{customer_segment}}</code>
+                <code>{{campaign_id}}</code>
+                <code>{{campaign_name}}</code>
+              </div>
+
+              <h3 class="section-gap">Template Preview</h3>
+              <div id="renderedTemplatePreview" class="message-preview">
+                Select or save a template.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Send / Simulate -->
+        <div id="tab-send" class="campaign-tab-panel">
+          <div class="campaign-form-wrap">
+            <div class="card">
+              <h3>Send / Simulate Campaign</h3>
+
+              <div class="field">
+                <label>Campaign</label>
+                <select id="sendCampaignSelect" onchange="loadSendPreview()"></select>
+              </div>
+
+              <div class="field">
+                <label>Template</label>
+                <select id="sendTemplateSelect" onchange="loadSendPreview()"></select>
+              </div>
+
+              <div class="button-row">
+                <button class="secondary-btn" onclick="loadSendPreview()">Preview Request</button>
+                <button class="primary-btn" onclick="simulateCampaignSend()">Simulate Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- History -->
+        <div id="tab-history" class="campaign-tab-panel">
+          <div class="table-card compact-table-card history-card">
+            <h3>Campaign History</h3>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Campaign ID</th>
+                    <th>Campaign Name</th>
+                    <th>Campaign Type</th>
+                    <th>Business Channel</th>
+                    <th>Platform</th>
+                    <th>Target Segment</th>
+                    <th>Status</th>
+                    <th>Total Audience</th>
+                    <th>Eligible Count</th>
+                    <th>Removed Count</th>
+                    <th>Sent Count</th>
+                    <th>Failed Count</th>
+                    <th>Created By</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody id="campaignHistoryBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responses -->
+        <div id="tab-responses" class="campaign-tab-panel">
+          <div class="card compact-table-card responses-card">
+            <h3>Campaign Responses</h3>
+
+            <div class="field small-select-field">
+              <label>Campaign</label>
+              <select id="responsesCampaignSelect" onchange="onResponsesCampaignChange()"></select>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Business Channel</th>
+                    <th>Platform</th>
+                    <th>Sent Status</th>
+                    <th>Rendered Title</th>
+                    <th>Rendered Message</th>
+                    <th>Opened</th>
+                    <th>Clicked</th>
+                    <th>Converted</th>
+                    <th>Sent At</th>
+                  </tr>
+                </thead>
+
+                <tbody id="campaignResponsesBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Metrics -->
+        <div id="tab-metrics" class="campaign-tab-panel">
+          <div class="card">
+            <h3>Daily Campaign Metrics</h3>
+            <div id="dailyMetricsGrid" class="kpi-grid compact-kpi-grid"></div>
+          </div>
+
+          <div class="card section-gap">
+            <h3>Selected Campaign Metrics</h3>
+
+            <div class="field small-select-field">
+              <label>Campaign</label>
+              <select id="metricsCampaignSelect" onchange="onMetricsCampaignChange()"></select>
+            </div>
+
+            <div id="selectedCampaignMetricsGrid" class="kpi-grid compact-kpi-grid"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../popup.js"></script>
+  <script src="../js/api-cache.js"></script>
+  <script src="../js/campaign.js"></script>
+  <script>
+  if (typeof guardPage === "function") {
+    guardPage("campaigns");
+  }
+
+  if (typeof loadNavigation === "function") {
+    loadNavigation("campaigns");
+  }
+
+  initCampaignModule();
+</script>
+</body>
+</html>

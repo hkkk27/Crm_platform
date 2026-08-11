@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loyalty Management</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/loyalty.css">
+  <link rel="stylesheet" href="../popup.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main loyalty-main">
+      <section class="content loyalty-content">
+        <div id="loyalty"></div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/navigation.js"></script>
+  <script src="../popup.js"></script>
+  <script src="../js/api-cache.js"></script>
+  <script src="../js/loyalty.js"></script>
+  <script>
+  if (typeof guardPage === "function") {
+    guardPage("loyalty");
+  }
+
+  if (typeof loadNavigation === "function") {
+    loadNavigation("loyalty");
+  }
+</script>
+</body>
+</html>

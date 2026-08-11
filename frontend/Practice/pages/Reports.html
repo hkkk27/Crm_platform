@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/Reports.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main reports-main-page">
+      <section class="content reports-content">
+        <div class="reports-page">
+          <div class="reports-toolbar">
+            <div>
+            </div>
+
+            <div class="report-actions">
+              <button class="report-btn" type="button" id="previewBtn" onclick="toggleReportPreview()">Preview</button>
+              <button class="report-btn" type="button" onclick="downloadReportWord()">Download Word</button>
+              <button class="report-btn primary" type="button" onclick="downloadReportPdf()">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="template-grid" id="templateGrid">
+            <button class="template-card active" type="button" data-template="executive" onclick="switchReportTemplate('executive')" aria-label="Executive Summary layout">
+              <span class="template-preview preview-executive"><i></i><b></b><em></em><small></small></span>
+              <strong>Executive Summary Report</strong>
+            </button>
+
+            <button class="template-card" type="button" data-template="performance" onclick="switchReportTemplate('performance')" aria-label="Performance Dashboard layout">
+              <span class="template-preview preview-dashboard"><i></i><b></b><em></em><small></small></span>
+              <strong>Standard Report</strong>
+            </button>
+
+            <button class="template-card" type="button" data-template="leadership" onclick="switchReportTemplate('leadership')" aria-label="Leadership Review layout">
+              <span class="template-preview preview-board"><i></i><b></b><em></em><small></small></span>
+              <strong>Brief Report</strong>
+            </button>
+
+            <button class="template-card" type="button" data-template="brief" onclick="switchReportTemplate('brief')" aria-label="One Page Brief layout">
+              <span class="template-preview preview-compact"><i></i><b></b><em></em><small></small></span>
+              <strong>Compact Report</strong>
+            </button>
+          </div>
+
+          <section id="reportCanvas" class="report-canvas executive-report"></section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/helpers.js"></script>
+  <script src="../js/Reports.js"></script>
+  <script>
+  if (typeof guardPage === "function") {
+    guardPage("reports");
+  }
+
+  if (typeof loadNavigation === "function") {
+    loadNavigation("reports");
+  }
+
+  initReportsPage();
+</script>
+</body>
+</html>

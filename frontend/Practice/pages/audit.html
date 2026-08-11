@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniLink CRM | Audit Logs</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/audit.css" />
+  <link rel="stylesheet" href="../popup.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main audit-main">
+      <section class="content audit-page">
+        <section class="audit-stat-grid" id="auditStatGrid"></section>
+        <section class="audit-filter-bar">
+          <div class="audit-date-filter">
+            <input type="date" id="auditDateFilter" class="audit-date-input" />
+          </div>
+          <button class="secondary-btn audit-clear-date-btn" id="auditClearDateFilter" type="button">Clear</button>
+        </section>
+        <section class="audit-layout-grid">
+          <article class="audit-card audit-table-card">
+            <div class="audit-card-header">
+              <h2>Activity Logs</h2>
+              <span id="auditResultCount"></span>
+            </div>
+            <div class="audit-table-scroll">
+              <table class="audit-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                    <th>Module</th>
+                    <th>Status</th>
+                    <th>Risk</th>
+                  </tr>
+                </thead>
+                <tbody id="auditLogsTable"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="../js/navigation.js"></script>
+  <script src="../popup.js"></script>
+  <script src="../js/api-cache.js"></script>
+  <script src="../js/audit.js"></script>
+</body>
+</html>

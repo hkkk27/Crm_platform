@@ -1,0 +1,1527 @@
+/* ================================
+   Reports - One Editable Report, Multiple Dashboard-Based Templates
+   File: Reports.css
+================================ */
+
+.reports-main-page {
+    min-height: 100vh;
+}
+
+.reports-content {
+    min-height: 100vh;
+    background: var(--bg);
+    padding: 30px;
+}
+
+.reports-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.reports-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.reports-toolbar h1 {
+    margin: 0;
+    color: var(--text);
+    font-size: 30px;
+}
+
+.reports-toolbar p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.report-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.report-btn {
+    height: 40px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    color: var(--text);
+    border-radius: 12px;
+    padding: 0 14px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.report-btn:hover,
+.report-btn.primary {
+    background: var(--teal);
+    color: #ffffff;
+    border-color: var(--teal);
+    box-shadow: 0 8px 18px rgba(0, 150, 136, 0.22);
+    transform: translateY(-2px);
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.template-card {
+    text-align: left;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--normal) var(--ease), box-shadow var(--normal) var(--ease), border-color var(--normal) var(--ease), background var(--fast) var(--ease);
+}
+
+.template-card strong {
+    display: block;
+    color: var(--text);
+    font-size: 14px;
+    margin: 10px 0 4px;
+}
+
+.template-card>span:last-child {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.template-card:hover,
+.template-card.active {
+    border-color: rgba(0, 150, 136, 0.4);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.template-card.active {
+    background: #f0fdfb;
+}
+
+.template-preview {
+    position: relative;
+    display: block;
+    height: 96px;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.template-preview i,
+.template-preview b,
+.template-preview em,
+.template-preview small {
+    position: absolute;
+    display: block;
+    border-radius: 6px;
+    content: "";
+}
+
+.preview-executive {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.preview-executive i {
+    left: 0;
+    top: 0;
+    width: 72%;
+    height: 24px;
+    background: var(--navy);
+}
+
+.preview-executive b {
+    right: 12px;
+    top: 9px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid rgba(0, 150, 136, .35);
+}
+
+.preview-executive em {
+    left: 12px;
+    top: 40px;
+    width: 78%;
+    height: 14px;
+    background: #dbeafe;
+}
+
+.preview-executive small {
+    left: 12px;
+    bottom: 12px;
+    width: 88%;
+    height: 24px;
+    background: var(--navy);
+}
+
+.preview-dashboard {
+    background: #e5eaf5;
+}
+
+.preview-dashboard i {
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    height: 18px;
+    background: var(--navy);
+}
+
+.preview-dashboard b {
+    left: 10px;
+    top: 42px;
+    width: 38%;
+    height: 34px;
+    background: #ffffff;
+    border-top: 4px solid var(--teal);
+}
+
+.preview-dashboard em {
+    right: 10px;
+    top: 42px;
+    width: 48%;
+    height: 14px;
+    background: #8ba0c4;
+}
+
+.preview-dashboard small {
+    right: 10px;
+    bottom: 14px;
+    width: 48%;
+    height: 14px;
+    background: #8ba0c4;
+}
+
+.preview-board {
+    background: linear-gradient(135deg, #ecfeff, #f8fafc);
+}
+
+.preview-board i {
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    height: 24px;
+    background: linear-gradient(90deg, var(--teal), var(--navy));
+}
+
+.preview-board b {
+    left: 10px;
+    top: 46px;
+    width: 42%;
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+}
+
+.preview-board em {
+    right: 10px;
+    top: 46px;
+    width: 42%;
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+}
+
+.preview-board small {
+    left: 46%;
+    bottom: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.preview-compact {
+    background: #ffffff;
+}
+
+.preview-compact i {
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 22px;
+    background: var(--navy);
+}
+
+.preview-compact b {
+    left: 10px;
+    top: 36px;
+    width: 37%;
+    height: 18px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+}
+
+.preview-compact em {
+    right: 10px;
+    top: 36px;
+    width: 37%;
+    height: 18px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+}
+
+.preview-compact small {
+    left: 10px;
+    bottom: 12px;
+    right: 10px;
+    height: 22px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+}
+
+.report-canvas {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    color: var(--text);
+    min-height: 980px;
+}
+
+.report-watermark-img {
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    width: 46%;
+    max-width: 520px;
+    transform: translate(-50%, -50%);
+    opacity: 0.16;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.report-canvas>*:not(.report-watermark-img) {
+    position: relative;
+    z-index: 1;
+}
+
+.report-canvas * {
+    box-sizing: border-box;
+}
+
+.report-canvas input,
+.report-canvas textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 10px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.94);
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    outline: none;
+}
+
+.report-canvas textarea {
+    min-height: 82px;
+    resize: vertical;
+    line-height: 1.45;
+}
+
+.report-preview input,
+.report-preview textarea {
+    border-color: transparent;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    resize: none;
+}
+
+.report-logo {
+    background: #ffffff;
+    border: 2px solid rgba(0, 150, 136, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--navy);
+    overflow: hidden;
+}
+
+.report-logo img {
+    max-width: 78px;
+    max-height: 78px;
+    object-fit: contain;
+}
+
+.report-label {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.report-title {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 18px;
+}
+
+.report-section-label {
+    margin: 16px 0 10px;
+    padding: 8px 10px;
+    background: var(--navy);
+    color: #ffffff;
+    font-weight: 900;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.metric-card {
+    background: rgba(248, 250, 252, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 11px;
+}
+
+.metric-card label:first-child {
+    margin-bottom: 8px;
+}
+
+/* Executive Summary Template */
+.executive-report .ex-head {
+    display: grid;
+    grid-template-columns: 1fr 112px;
+    gap: 22px;
+    padding: 24px 28px 16px;
+    background: linear-gradient(100deg, var(--navy) 0%, var(--navy) 68%, #ffffff 68%, #ffffff 100%);
+    color: #ffffff;
+}
+
+.executive-report .ex-head h2 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.05;
+    color: #ffffff;
+}
+
+.executive-report .ex-head p {
+    margin: 8px 0 0;
+    color: #dbeafe;
+    max-width: 680px;
+    font-size: 13px;
+}
+
+.executive-report .report-logo {
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    justify-self: end;
+}
+
+.executive-report .ex-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 12px 24px;
+    background: rgba(248, 250, 252, .94);
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+}
+
+.executive-report .ex-body {
+    padding: 18px 24px 24px;
+}
+
+.executive-report .project-overview,
+.executive-report .report-panel {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.93);
+    padding: 14px;
+}
+
+.executive-report .project-overview {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.executive-report .building-icon {
+    min-height: 120px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+}
+
+.executive-report .two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* Performance Dashboard Template */
+.performance-report {
+    background: #e9eef8;
+    padding: 18px;
+}
+
+.performance-report .perf-head {
+    background: var(--navy);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.performance-report .perf-head h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.performance-report .perf-head p {
+    margin: 6px 0 0;
+    color: #dbeafe;
+}
+
+.performance-report .report-logo {
+    width: 82px;
+    height: 82px;
+    border-radius: 20px;
+}
+
+.performance-report .perf-meta,
+.performance-report .perf-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.performance-report .perf-card,
+.performance-report .perf-section {
+    background: rgba(255, 255, 255, .95);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.performance-report .perf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.performance-report .perf-chart {
+    min-height: 180px;
+    border: 1px dashed rgba(0, 150, 136, .45);
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 14px;
+}
+
+/* Leadership Review Template */
+.leadership-report {
+    background: #f8fafc;
+    padding: 18px;
+}
+
+.leadership-report .lead-head {
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.leadership-report .lead-head h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.leadership-report .lead-head p {
+    margin: 8px 0 0;
+    color: #e0f2fe;
+}
+
+.leadership-report .report-logo {
+    width: 92px;
+    height: 92px;
+    border-radius: 24px;
+}
+
+.leadership-report .lead-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.leadership-report .lead-card {
+    background: rgba(255, 255, 255, .95);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 18px;
+    min-height: 150px;
+    box-shadow: var(--shadow-sm);
+}
+
+.leadership-report .lead-card.wide {
+    grid-column: span 2;
+}
+
+/* One Page Brief Template */
+.brief-report .brief-head {
+    display: grid;
+    grid-template-columns: 1fr 90px;
+    gap: 18px;
+    padding: 18px 22px;
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.brief-report .brief-head h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.brief-report .brief-head p {
+    margin: 6px 0 0;
+    color: #dbeafe;
+    font-size: 12px;
+}
+
+.brief-report .report-logo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+
+.brief-report .brief-body {
+    padding: 18px;
+}
+
+.brief-report .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.brief-report .brief-box {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .94);
+    padding: 12px;
+}
+
+.brief-report textarea {
+    min-height: 70px;
+}
+
+@media print {
+
+    .sidebar,
+    .sidebar-toggle,
+    .sidebar-overlay,
+    .reports-toolbar,
+    .template-grid {
+        display: none !important;
+    }
+
+    .main,
+    .main.full-width {
+        margin-left: 0 !important;
+    }
+
+    .reports-content {
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .reports-page {
+        max-width: none;
+    }
+
+    .report-canvas {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+    }
+
+    .report-watermark-img {
+        opacity: 0.13;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .template-grid,
+    .executive-report .ex-meta,
+    .metric-grid,
+    .performance-report .perf-meta,
+    .performance-report .perf-kpis,
+    .leadership-report .lead-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .executive-report .two-col,
+    .performance-report .perf-grid,
+    .brief-report .brief-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .reports-content {
+        padding: 18px;
+    }
+
+    .reports-toolbar,
+    .executive-report .ex-head,
+    .performance-report .perf-head,
+    .leadership-report .lead-head,
+    .brief-report .brief-head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .template-grid,
+    .executive-report .ex-meta,
+    .metric-grid,
+    .performance-report .perf-meta,
+    .performance-report .perf-kpis,
+    .leadership-report .lead-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .leadership-report .lead-card.wide {
+        grid-column: auto;
+    }
+}
+
+
+/* =====================================================
+   FINAL PRINT / LOGO / WATERMARK FIX
+   Keep existing HTML and JS names unchanged.
+===================================================== */
+
+/* Make printed/downloaded PDF preserve colors and images better */
+.report-canvas,
+.report-canvas * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* The watermark is an actual image so it prints/downloads more reliably than CSS background. */
+.report-watermark-img {
+  position: absolute !important;
+  left: 50% !important;
+  top: 52% !important;
+  width: 58% !important;
+  max-width: 680px !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+  opacity: 0.18 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  object-fit: contain !important;
+}
+
+/* Keep content above watermark but allow watermark to remain visible through soft cards. */
+.report-canvas > *:not(.report-watermark-img) {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.executive-report .project-overview,
+.executive-report .report-panel,
+.performance-report .perf-card,
+.performance-report .perf-section,
+.leadership-report .lead-card,
+.brief-report .brief-box,
+.metric-card {
+  background: rgba(255, 255, 255, 0.86) !important;
+}
+
+.performance-report .perf-chart {
+  background: rgba(255, 255, 255, 0.84) !important;
+}
+
+/* Main top logo: make it rectangular so full wordmark is visible, not cropped inside a circle. */
+.report-logo {
+  width: 150px !important;
+  height: 72px !important;
+  min-width: 150px !important;
+  border-radius: 18px !important;
+  padding: 8px 12px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 2px solid rgba(0, 150, 136, 0.25) !important;
+  overflow: hidden !important;
+}
+
+.report-logo img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 126px !important;
+  max-height: 52px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Make header right-side logo columns wide enough for rectangular logo. */
+.executive-report .ex-head {
+  grid-template-columns: 1fr 170px !important;
+  background: linear-gradient(100deg, var(--navy) 0%, var(--navy) 72%, #ffffff 72%, #ffffff 100%) !important;
+}
+
+.executive-report .report-logo {
+  justify-self: end !important;
+}
+
+.brief-report .brief-head {
+  grid-template-columns: 1fr 170px !important;
+}
+
+/* Keep dashboard/performance/leadership template logo aligned cleanly. */
+.performance-report .report-logo,
+.leadership-report .report-logo,
+.brief-report .report-logo {
+  width: 150px !important;
+  height: 72px !important;
+  border-radius: 18px !important;
+}
+
+/* Prevent browser print from shrinking/cropping report header logo. */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  .report-canvas {
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    min-height: auto !important;
+  }
+
+  .report-watermark-img {
+    position: fixed !important;
+    left: 50% !important;
+    top: 52% !important;
+    width: 62% !important;
+    max-width: 700px !important;
+    opacity: 0.20 !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 0 !important;
+  }
+
+  .report-logo {
+    width: 150px !important;
+    height: 72px !important;
+    min-width: 150px !important;
+    border-radius: 18px !important;
+    padding: 8px 12px !important;
+    overflow: hidden !important;
+  }
+
+  .report-logo img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 126px !important;
+    max-height: 52px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .executive-report .ex-head,
+  .brief-report .brief-head {
+    grid-template-columns: 1fr 170px !important;
+    break-inside: avoid;
+  }
+
+  textarea,
+  input,
+  [contenteditable="true"] {
+    color: #111827 !important;
+  }
+}
+/* =====================================================
+   FINAL HEADER PRINT COLOR FIX
+   Fix dark text on navy header in downloaded PDF
+===================================================== */
+
+/* Force title/subtitle white on dark report headers */
+.executive-report .ex-head h2,
+.executive-report .ex-head p,
+.performance-report .perf-head h2,
+.performance-report .perf-head p,
+.leadership-report .lead-head h2,
+.leadership-report .lead-head p,
+.brief-report .brief-head h2,
+.brief-report .brief-head p {
+  color: #ffffff !important;
+}
+
+/* Make the upper header more print-safe */
+.executive-report .ex-head {
+  background: #192A56 !important;
+  color: #ffffff !important;
+}
+
+.performance-report .perf-head,
+.brief-report .brief-head {
+  background: #192A56 !important;
+  color: #ffffff !important;
+}
+
+.leadership-report .lead-head {
+  background: linear-gradient(135deg, #009688, #192A56) !important;
+  color: #ffffff !important;
+}
+
+/* Keep logo area white and readable */
+.report-logo {
+  background: #ffffff !important;
+}
+
+/* Print/PDF force */
+@media print {
+  .executive-report .ex-head,
+  .performance-report .perf-head,
+  .brief-report .brief-head {
+    background: #192A56 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .leadership-report .lead-head {
+    background: #192A56 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .executive-report .ex-head h2,
+  .executive-report .ex-head p,
+  .performance-report .perf-head h2,
+  .performance-report .perf-head p,
+  .leadership-report .lead-head h2,
+  .leadership-report .lead-head p,
+  .brief-report .brief-head h2,
+  .brief-report .brief-head p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
+/* =====================================================
+   REPORT CHARTS / TABLES FROM DASHBOARD EXPORT
+   Add this at the END of css/Reports.css
+===================================================== */
+
+.report-chart-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.report-chart-figure {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.report-chart-figure figcaption {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.report-chart-figure img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+.report-table-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.report-table-block {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  overflow-x: auto;
+}
+
+.report-table-block h4 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.report-table-block table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.report-table-block th,
+.report-table-block td {
+  border-bottom: 1px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+.report-table-block th {
+  background: #f8fafc;
+  color: var(--navy);
+  font-weight: 900;
+}
+
+@media print {
+  .report-chart-gallery {
+    break-inside: avoid;
+  }
+
+  .report-chart-figure img {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 800px) {
+  .report-chart-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   REPORTS: ALL KPI CARDS + DASHBOARD CHART EXPORT CSS
+   Add this at the END of css/Reports.css
+===================================================== */
+
+.report-kpi-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.report-kpi-card {
+  background: rgba(248, 250, 252, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.report-kpi-card span {
+  display: inline-flex;
+  color: var(--teal);
+  background: #ecfeff;
+  border: 1px solid #99f6e4;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.report-kpi-card h4 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.report-kpi-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.report-kpi-card small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.report-chart-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.report-chart-figure {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.report-chart-figure figcaption {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.report-chart-figure img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+.report-chart-empty {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  background: #f8fafc;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.report-table-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.report-table-block {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  overflow-x: auto;
+}
+
+.report-table-block h4 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.report-table-block table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.report-table-block th,
+.report-table-block td {
+  border-bottom: 1px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+.report-table-block th {
+  background: #f8fafc;
+  color: var(--navy);
+  font-weight: 900;
+}
+
+@media print {
+  .report-chart-gallery,
+  .report-kpi-card-grid {
+    break-inside: avoid;
+  }
+
+  .report-chart-figure img {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .report-kpi-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .report-chart-gallery,
+  .report-kpi-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   REPORT PDF AESTHETIC + KPI PRINT LAYOUT FIX
+   Add this at the VERY END of css/Reports.css
+===================================================== */
+
+/* Keep report text clean and prevent one-word clipping/cut-off */
+.report-canvas,
+.report-canvas * {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Better screen layout: all KPI cards stay compact */
+.report-kpi-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  align-items: stretch !important;
+}
+
+.report-kpi-card {
+  min-width: 0 !important;
+  padding: 10px !important;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.report-kpi-card h4,
+.report-kpi-card strong,
+.report-kpi-card small {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.report-kpi-card h4 {
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+.report-kpi-card strong {
+  font-size: 19px !important;
+  line-height: 1.12 !important;
+}
+
+.report-kpi-card small {
+  font-size: 10px !important;
+  line-height: 1.25 !important;
+}
+
+/* Chart grid should not explode page width */
+.report-chart-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.report-chart-figure img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 220px !important;
+  object-fit: contain !important;
+}
+
+/* Table content should not force extra width */
+.report-table-block,
+.report-table-block table {
+  max-width: 100% !important;
+}
+
+.report-table-block th,
+.report-table-block td {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    min-width: 0 !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  .reports-content {
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .reports-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .report-canvas {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+
+  /* Remove browser form appearance so text prints like a real report */
+  .report-canvas input,
+  .report-canvas textarea {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #111827 !important;
+    font-size: 10.5px !important;
+    line-height: 1.28 !important;
+    font-weight: 700 !important;
+    overflow: visible !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .report-canvas textarea {
+    min-height: 0 !important;
+    height: auto !important;
+    resize: none !important;
+  }
+
+  [contenteditable="true"],
+  [contenteditable="false"] {
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Main KPI fix: compact multi-column cards in PDF */
+  .report-kpi-card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    margin: 0 0 8px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .report-kpi-card {
+    padding: 6px 7px !important;
+    border-radius: 9px !important;
+    min-height: 58px !important;
+    background: #f8fafc !important;
+    border: 1px solid #dbe3ee !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .report-kpi-card span {
+    font-size: 7.5px !important;
+    padding: 1px 5px !important;
+    margin-bottom: 3px !important;
+    line-height: 1.1 !important;
+  }
+
+  .report-kpi-card h4 {
+    font-size: 9px !important;
+    line-height: 1.15 !important;
+    margin: 0 0 2px !important;
+  }
+
+  .report-kpi-card strong {
+    font-size: 14px !important;
+    line-height: 1.05 !important;
+    margin: 0 !important;
+  }
+
+  .report-kpi-card small {
+    font-size: 7.5px !important;
+    line-height: 1.15 !important;
+    margin-top: 3px !important;
+  }
+
+  /* Reduce section spacing so pages look professional */
+  .report-section-label {
+    margin: 9px 0 6px !important;
+    padding: 5px 8px !important;
+    font-size: 10px !important;
+    border-radius: 5px !important;
+    background: #192A56 !important;
+    color: #ffffff !important;
+    break-after: avoid !important;
+  }
+
+  .report-title {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .executive-report .ex-head,
+  .performance-report .perf-head,
+  .leadership-report .lead-head,
+  .brief-report .brief-head {
+    padding: 12px 16px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .executive-report .ex-head h2,
+  .performance-report .perf-head h2,
+  .leadership-report .lead-head h2,
+  .brief-report .brief-head h2 {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  .executive-report .ex-head p,
+  .performance-report .perf-head p,
+  .leadership-report .lead-head p,
+  .brief-report .brief-head p {
+    font-size: 9.5px !important;
+    line-height: 1.25 !important;
+    color: #e5eefb !important;
+    -webkit-text-fill-color: #e5eefb !important;
+  }
+
+  .executive-report .ex-meta,
+  .performance-report .perf-meta,
+  .metric-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .executive-report .ex-body,
+  .brief-report .brief-body {
+    padding: 10px 14px !important;
+  }
+
+  .executive-report .project-overview,
+  .executive-report .report-panel,
+  .performance-report .perf-section,
+  .leadership-report .lead-card,
+  .brief-report .brief-box,
+  .metric-card {
+    padding: 8px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.90) !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .executive-report .project-overview {
+    grid-template-columns: 72px 1fr !important;
+    gap: 8px !important;
+  }
+
+  .executive-report .building-icon {
+    min-height: 72px !important;
+    font-size: 34px !important;
+  }
+
+  .executive-report .two-col,
+  .performance-report .perf-grid,
+  .brief-report .brief-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .report-chart-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    margin-top: 7px !important;
+    break-inside: avoid !important;
+  }
+
+  .report-chart-figure {
+    padding: 6px !important;
+    border-radius: 9px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .report-chart-figure figcaption {
+    font-size: 8.5px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .report-chart-figure img {
+    max-height: 155px !important;
+  }
+
+  .report-table-block {
+    padding: 6px !important;
+    border-radius: 9px !important;
+    break-inside: avoid !important;
+  }
+
+  .report-table-block h4 {
+    font-size: 9px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .report-table-block th,
+  .report-table-block td {
+    padding: 4px !important;
+    font-size: 7.5px !important;
+    line-height: 1.15 !important;
+  }
+
+  .report-logo {
+    width: 120px !important;
+    height: 56px !important;
+    min-width: 120px !important;
+    padding: 6px 8px !important;
+  }
+
+  .report-logo img {
+    max-width: 102px !important;
+    max-height: 42px !important;
+  }
+}
