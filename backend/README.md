@@ -2,12 +2,16 @@
 
 The backend for OmniLink CRM is built using **FastAPI** and uses a **SQLite** database to manage customer data, loyalty tiers, marketing campaigns, customer service tickets, and more.
 
-## Features
+> [!IMPORTANT]
+> **For detailed backend instructions, API design, and database schema diagrams, please read the [Final Software Project Documentation PDF](../docs/Final%20Software%20Project%20Documentation.pdf).**
 
-- **Authentication & RBAC**: JWT-based login with role-based access control.
-- **RESTful APIs**: Clean and performant endpoints for all CRM functionalities.
-- **Modular Architecture**: Separate routers for campaigns, loyalty, customer service, dashboard, etc.
-- **Database Integrated**: Uses SQLite for rapid development and deployment, with comprehensive data modeling.
+## Features & Architecture
+
+- **Authentication & RBAC**: JWT-based login with role-based access control. Passwords are secured using PBKDF2-HMAC-SHA256 with a random salt.
+- **RESTful APIs**: Clean and performant endpoints for all CRM functionalities (Auth, Customers, Consents, Memberships, Campaigns, Customer Service, Admin, Audit).
+- **Performance Controls**: Direct SQL aggregation for summaries, Backend TTL caching for short-lived summary data, and server-side pagination.
+- **Modular Architecture**: Layered design separating presentation (API routers), business logic (services), and data access (SQLite queries).
+- **Database Integrated**: Uses SQLite for rapid development and deployment. Includes a central `customers_360` snapshot table, operational tables, and append-only ledgers/timelines for historical tracking.
 
 ## Prerequisites
 
@@ -26,16 +30,13 @@ The backend for OmniLink CRM is built using **FastAPI** and uses a **SQLite** da
    pip install -r requirements.txt
    ```
 
-3. Configure Environment Variables:
-   Create a `.env` file in the root of the `backend` directory.
-
-4. Start the Application:
-   Run the FastAPI server using Uvicorn:
+3. Start the Application:
+   Run the FastAPI server using Uvicorn (make sure you are in the `backend` folder):
    ```bash
    uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
    ```
 
-5. Access the API Documentation:
+4. Access the API Documentation:
    Once the server is running, navigate to:
    - **Swagger UI**: `http://localhost:8000/docs`
    - **ReDoc**: `http://localhost:8000/redoc`
@@ -48,3 +49,5 @@ The backend for OmniLink CRM is built using **FastAPI** and uses a **SQLite** da
 - `app/schemas/`: Pydantic models for data validation.
 - `app/services/`: Core business logic (loyalty calculations, campaign dispatch, etc.).
 - `app/main.py`: The FastAPI application instance and entry point.
+
+> **Reminder:** For full documentation on the backend data model and workflows, please refer to the [Final Software Project Documentation](../docs/Final%20Software%20Project%20Documentation.pdf).

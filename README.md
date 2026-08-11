@@ -1,34 +1,44 @@
 # OmniLink CRM
 
-OmniLink CRM is a comprehensive Customer Relationship Management platform designed for modern retail. It seamlessly integrates customer analytics, loyalty programs, marketing campaigns, consent management, and customer service into a single cohesive system.
+An Integrated Customer Relationship Management Platform for Retail Customer Intelligence, Loyalty, Campaigns, Consent, and Customer Service.
+
+**Prepared by:** Harshit Singh and Ankit Kumar (Team Syndicate)  
+**Project Mentor:** Mrs. Varsha Domb  
+**Date:** 24/07/2026  
+
+> [!IMPORTANT]
+> **For detailed instructions, comprehensive architecture breakdowns, and full project details, please read the [Final Software Project Documentation PDF](docs/Final%20Software%20Project%20Documentation.pdf).**
+
+## Executive Summary
+
+OmniLink CRM was developed to address a common retail-business problem: customer information is often distributed across separate systems for purchases, loyalty membership, marketing communication, consent, and support operations. This fragmentation makes it difficult for employees to understand the customer completely, identify business opportunities, communicate through permitted channels, and provide consistent service.
+
+The platform provides a unified **Customer 360** data foundation and connects that foundation with multiple operational modules:
+- **Dashboard**: Converts customer and operational data into live KPIs and charts.
+- **Customer 360**: Provides searchable, enriched customer profiles.
+- **Consent Management**: Records communication permissions and Do-Not-Contact status.
+- **Loyalty Management**: Supports membership tiers, benefits, points, redemptions, and recommendation logic.
+- **Campaign Management**: Creates segmented audiences, validates consent, personalizes templates, demonstrates delivery through Discord, and records outcomes.
+- **Customer Service**: Manages tickets, follow-ups, resolutions, timelines, SLA information, and workload.
+- **Admin and Audit**: Provide operational control and traceability.
+
+## Technology Stack
+
+The system uses a modern 3-tier architecture:
+1. **Frontend**: HTML, CSS, JavaScript (Vanilla), and Chart.js for visualization.
+2. **Backend**: Python and FastAPI, served via Uvicorn.
+3. **Database**: SQLite.
+4. **Security**: JWT Bearer authentication, Role-Based Access Control (RBAC), and PBKDF2-HMAC-SHA256 password hashing.
+5. **External Integrations**: Discord webhooks used for simulated campaign delivery.
 
 ## Project Structure
 
-- **frontend/**: The user interface built with HTML/CSS/JS. Contains the CRM dashboards, Customer 360 views, loyalty management, and administrative panels.
-- **backend/**: The FastAPI REST APIs that power the frontend, handling authentication, role-based access control, business logic, and database interactions using SQLite.
-- **docs/**: Comprehensive project documentation, including the System Architecture Guide and Technical Bible.
+- `frontend/`: The user interface built with HTML/CSS/JS. Contains the CRM dashboards, Customer 360 views, loyalty management, and administrative panels.
+- `backend/`: The FastAPI REST APIs that power the frontend, handling authentication, business logic, and database interactions.
+- `docs/`: Comprehensive project documentation.
 
-## Key Modules
-
-- **Dashboard**: Real-time KPIs and business insights.
-- **Customer 360**: Complete customer profiles including demographics, purchase behavior, and digital engagement.
-- **Loyalty System**: Tier-based loyalty management, recommendation engine, and point tracking.
-- **Campaign Management**: Targeted marketing communications integrated with Discord.
-- **Consent Management**: Strict adherence to customer communication preferences.
-- **Customer Service**: Complete ticketing system with SLA tracking and history.
-- **Audit Logs**: Comprehensive tracking of all system operations.
-
-## Architecture
-
-The system uses a modern 3-tier architecture:
-1. **Frontend**: HTML/CSS/JavaScript
-2. **Backend**: FastAPI (Python) REST API
-3. **Database**: SQLite (via SQLAlchemy or raw queries)
-
-## Setup
+## Getting Started
 
 For detailed instructions on running the backend and viewing the frontend, please refer to the respective `README.md` files in the `frontend` and `backend` directories.
 
-## Documentation
-
-Detailed architectural and technical documentation can be found in the `docs/` directory.
+> **Reminder:** Don't forget to check the [Final Software Project Documentation](docs/Final%20Software%20Project%20Documentation.pdf) for an in-depth walkthrough of the system.
